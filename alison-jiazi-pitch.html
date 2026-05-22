@@ -1,0 +1,508 @@
+<!DOCTYPE html>
+<html lang="zh-TW">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Alison Hsu — 越南外派合約提案</title>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,700;1,400&family=DM+Mono:wght@500;600&family=Noto+Sans+TC:wght@300;400;500;700&display=swap" rel="stylesheet">
+<style>
+*{margin:0;padding:0;box-sizing:border-box}
+:root{
+  --bg:#252219;--surf:#2E2B24;--surf2:#3A362E;
+  --gold:#D4A843;--gold2:#F0CC6E;--gdim:#9A7830;
+  --text:#F5EFE3;--muted:#D0C4A8;--dim:#8A7A60;
+  --bdr:#3A3428;--bdrb:#4A4235;
+  --warn:#E8803A;--warnbg:#2E1E0C;
+  --green:#5A9E6A;--greenbg:#0E2014;
+}
+*{transition:none}
+body{background:var(--bg);color:var(--text);font-family:'Noto Sans TC',sans-serif;overflow-x:hidden;-webkit-font-smoothing:antialiased}
+body::before{content:'';position:fixed;inset:0;background-image:linear-gradient(rgba(255,255,255,.025) 1px,transparent 1px),linear-gradient(90deg,rgba(255,255,255,.025) 1px,transparent 1px);background-size:48px 48px;pointer-events:none;z-index:0}
+.w{position:relative;z-index:1;max-width:960px;margin:0 auto;padding:52px 36px 100px}
+@keyframes fu{from{opacity:0;transform:translateY(18px)}to{opacity:1;transform:translateY(0)}}
+.f{opacity:0;animation:fu 0.55s ease forwards}
+
+/* HERO */
+.hero{text-align:center;padding:68px 0 46px}
+.htag{font-family:'DM Mono',monospace;font-size:16px;letter-spacing:.2em;color:var(--gold);text-transform:uppercase;margin-bottom:22px;display:flex;align-items:center;justify-content:center;gap:14px}
+.htag::before,.htag::after{content:'';width:40px;height:1px;background:var(--gdim)}
+h1{font-family:'Playfair Display',serif;font-size:clamp(26px,3.8vw,42px);line-height:1.2;margin-bottom:10px}
+h1 em{font-style:italic;color:var(--gold2)}
+.hdiv{width:52px;height:2px;background:linear-gradient(90deg,transparent,var(--gold),transparent);margin:24px auto}
+.hsub{font-size:19px;color:var(--muted);font-weight:300;line-height:1.85}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bdrb);border:1px solid var(--bdrb);border-radius:14px;overflow:hidden;margin-bottom:44px}
+.stat{background:var(--surf);padding:28px 16px;text-align:center}
+.sn{font-family:'Playfair Display',serif;font-size:34px;color:var(--gold2);line-height:1;margin-bottom:10px}
+.sl{font-size:16px;color:var(--muted);font-weight:300;line-height:1.55}
+
+/* VALUE PROP */
+.vp{background:var(--surf);border:1px solid var(--bdrb);border-left:5px solid var(--gold);border-radius:14px;padding:34px 38px;margin-bottom:52px}
+.vtag{font-family:'DM Mono',monospace;font-size:18px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:18px;font-weight:600}
+.vtext{font-size:19px;line-height:2.0;color:var(--text);font-weight:300}
+.vtext strong{color:var(--gold2);font-weight:500}
+.badges{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
+.badge{background:var(--surf2);border:1px solid var(--bdrb);border-radius:8px;padding:7px 16px;font-size:15px;color:var(--gold2)}
+
+/* SECTION */
+.sec{margin-bottom:58px}
+.sechd{display:flex;align-items:center;gap:18px;margin-bottom:24px}
+.secn{font-family:'Playfair Display',serif;font-size:60px;color:var(--gold);line-height:1;font-style:italic;min-width:66px}
+.sectag{font-family:'DM Mono',monospace;font-size:18px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:7px;font-weight:600}
+.sectitle{font-size:28px;font-weight:700;color:var(--text)}
+
+/* CARDS */
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;align-items:start}
+.cards.two{grid-template-columns:repeat(2,1fr);align-items:start}
+.cards.four{grid-template-columns:repeat(4,1fr);align-items:start}
+.cards.one{grid-template-columns:1fr;align-items:start}
+.card{background:var(--surf);border:1px solid var(--bdrb);border-radius:12px;padding:26px 28px}
+.card.hl{border-color:var(--gdim);background:linear-gradient(135deg,var(--surf2),rgba(212,168,67,.07))}
+.card.full{grid-column:1/-1}
+.card.warn{border-color:var(--warn);background:var(--warnbg)}
+.card.green{border-color:var(--green);background:var(--greenbg)}
+.ctag{font-family:'DM Mono',monospace;font-size:15px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;font-weight:600;line-height:1.4}
+.ctag.w{color:var(--warn)}
+.ctag.g{color:var(--green)}
+.cval{font-size:22px;font-weight:700;color:var(--text);margin-bottom:14px;line-height:1.35}
+.cnote{font-size:17px;color:var(--muted);font-weight:300;line-height:1.85}
+.cnote strong{color:var(--gold2);font-weight:500}
+.cnote .wt{color:var(--warn);font-weight:500}
+.cnote .gt{color:var(--green);font-weight:500}
+.opt{display:flex;flex-direction:column;gap:9px;margin-top:16px}
+.opt-row{display:flex;align-items:flex-start;gap:12px;background:var(--surf2);border:1px solid var(--bdrb);border-radius:8px;padding:12px 16px}
+.opt-lbl{font-family:'DM Mono',monospace;font-size:14px;color:var(--gold);text-transform:uppercase;letter-spacing:.08em;white-space:nowrap;font-weight:600;margin-top:1px}
+.opt-txt{font-size:17px;color:var(--muted);font-weight:300;line-height:1.65}
+
+/* SALARY */
+.sal{background:var(--surf);border:1px solid var(--bdrb);border-radius:14px;overflow:hidden;margin-bottom:14px}
+.saltop{padding:30px 34px;background:linear-gradient(135deg,var(--surf2),rgba(212,168,67,.1));display:flex;justify-content:space-between;align-items:center;gap:24px}
+.saln{font-family:'Playfair Display',serif;font-size:56px;color:var(--gold2);line-height:1}
+.saln span{font-size:24px;color:var(--muted);font-family:'Noto Sans TC',sans-serif;font-weight:300}
+.saltag{font-family:'DM Mono',monospace;font-size:16px;letter-spacing:.12em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;font-weight:600}
+.salnote{font-size:17px;color:var(--muted);font-weight:300;max-width:300px;text-align:right;line-height:1.85}
+.salnote em{color:var(--warn);font-style:normal;font-weight:600}
+.salsplit{display:grid;grid-template-columns:repeat(2,1fr);gap:2px;background:var(--bdr)}
+.spitem{padding:24px 30px;background:var(--surf)}
+.sppct{font-family:'Playfair Display',serif;font-size:42px;color:var(--gold2);margin-bottom:10px}
+.splbl{font-size:20px;font-weight:700;color:var(--text);margin-bottom:10px}
+.spnote{font-size:17px;color:var(--muted);font-weight:300;line-height:1.75}
+.gp{background:linear-gradient(135deg,var(--surf2),rgba(212,168,67,.09));border:1px solid var(--gdim);border-radius:12px;padding:26px 30px;margin-top:14px}
+.gp-tag{font-family:'DM Mono',monospace;font-size:16px;letter-spacing:.1em;color:var(--gold);text-transform:uppercase;margin-bottom:12px;font-weight:600;line-height:1.5}
+.gp-val{font-size:23px;font-weight:700;color:var(--gold2);margin-bottom:14px;line-height:1.35}
+.gp-note{font-size:17px;color:var(--muted);font-weight:300;line-height:1.85}
+.gp-note strong{color:var(--gold2);font-weight:500}
+.gp-cols{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:18px}
+.gp-col{background:rgba(0,0,0,.25);border:1px solid var(--bdrb);border-radius:9px;padding:18px 20px}
+.gp-col-lbl{font-size:15px;color:var(--gold);font-weight:600;margin-bottom:9px;font-family:'DM Mono',monospace;letter-spacing:.08em;text-transform:uppercase}
+.gp-col-txt{font-size:17px;color:var(--muted);font-weight:300;line-height:1.7}
+
+/* APPROACH */
+.ap{background:var(--surf);border:1px solid var(--bdrb);border-radius:12px;padding:26px 30px;margin-bottom:12px;display:grid;grid-template-columns:auto 1fr;gap:20px;align-items:start}
+.apicon{font-size:28px;margin-top:2px}
+.aptitle{font-size:20px;font-weight:700;color:var(--gold2);margin-bottom:10px}
+.apbody{font-size:17px;color:var(--muted);line-height:1.9;font-weight:300}
+
+/* ROI */
+.roi{background:var(--surf);border:1px solid var(--bdrb);border-radius:14px;overflow:hidden}
+.rrow{display:grid;grid-template-columns:1.1fr 1.45fr 1.45fr;border-bottom:1px solid var(--bdr)}
+.rrow:last-child{border-bottom:none}
+.rrow.rhdr{background:var(--surf2)}
+.rcell{padding:20px 24px;font-size:17px;color:var(--muted);font-weight:300;border-right:1px solid var(--bdr);line-height:1.65}
+.rcell:last-child{border-right:none}
+.rrow.rhdr .rcell{font-family:'DM Mono',monospace;font-size:16px;letter-spacing:.08em;color:var(--gold);text-transform:uppercase;font-weight:600;padding:18px 24px}
+.rrow.rtot{background:linear-gradient(135deg,var(--surf2),rgba(212,168,67,.07))}
+.rrow.rtot .rcell{color:var(--gold2);font-weight:700;font-size:19px}
+.pos{color:#6EC87A!important}
+.neg{color:#E07070!important}
+
+/* PHASE */
+.phase-strip{display:grid;grid-template-columns:repeat(4,1fr);gap:2px;background:var(--bdrb);border:1px solid var(--bdrb);border-radius:12px;overflow:hidden;margin-bottom:16px}
+.phase-item{background:var(--surf);padding:20px 16px;text-align:center}
+.phase-item.active{background:linear-gradient(135deg,var(--surf2),rgba(212,168,67,.1));border-bottom:3px solid var(--gold)}
+.phase-num{font-family:'DM Mono',monospace;font-size:14px;color:var(--gold);letter-spacing:.12em;text-transform:uppercase;margin-bottom:8px;font-weight:600}
+.phase-txt{font-size:17px;color:var(--text);font-weight:500;line-height:1.4}
+.phase-sub{font-size:15px;color:var(--muted);font-weight:300;margin-top:6px}
+
+/* CLOSER */
+.closer{background:linear-gradient(135deg,var(--surf2),rgba(212,168,67,.09));border:1px solid var(--gdim);border-radius:14px;padding:50px;text-align:center;margin-top:48px}
+.closer h2{font-family:'Playfair Display',serif;font-size:32px;color:var(--gold2);margin-bottom:22px;font-style:italic}
+.closer p{font-size:19px;color:var(--muted);line-height:2.0;font-weight:300;max-width:660px;margin:0 auto}
+.closer p strong{color:var(--text);font-weight:500}
+
+/* FOOTER */
+.foot{margin-top:64px;padding-top:28px;border-top:1px solid var(--bdrb);display:flex;justify-content:space-between;align-items:center}
+.fname{font-family:'Playfair Display',serif;font-size:30px;color:var(--gold2);font-style:italic}
+.femail{font-family:'DM Mono',monospace;font-size:18px;color:var(--muted);letter-spacing:.05em}
+
+@media(max-width:700px){
+  .stats,.cards,.cards.two,.cards.four{grid-template-columns:repeat(2,1fr)}
+  .card.full{grid-column:1/-1}
+  .saltop{flex-direction:column}.salnote{text-align:left}
+  .salsplit,.gp-cols{grid-template-columns:1fr}
+  .rrow{grid-template-columns:1fr}.rcell{border-right:none;border-bottom:1px solid var(--bdr)}
+  .phase-strip{grid-template-columns:repeat(2,1fr)}
+  .foot{flex-direction:column;gap:12px}
+}
+</style>
+</head>
+<body>
+<div class="w">
+
+<!-- HERO -->
+<div class="hero f" style="animation-delay:.08s">
+  <div class="htag">越南外派合約提案</div>
+  <h1>我的背景，是你在越南<em>找不太到</em>的組合<br>這是我對這份合作的期待</h1>
+  <div class="hdiv"></div>
+  <p class="hsub">Alison Hsu｜技術業務 × 工業自動化 × OT/IT整合<br>以下每一個數字都有市場依據，每一項要求都有對應的商業邏輯</p>
+</div>
+
+<!-- STATS -->
+<div class="stats f" style="animation-delay:.14s">
+  <div class="stat"><div class="sn">200<span style="font-size:20px;color:var(--gold)">%</span></div><div class="sl">業績達成率<br>關鍵專案倍數</div></div>
+  <div class="stat"><div class="sn">100<span style="font-size:20px;color:var(--gold)">+</span></div><div class="sl">台灣工廠<br>實地走訪</div></div>
+  <div class="stat"><div class="sn">6<span style="font-size:20px;color:var(--gold)">年</span></div><div class="sl">跨域<br>實戰背景</div></div>
+  <div class="stat"><div class="sn">4<span style="font-size:20px;color:var(--gold)">段</span></div><div class="sl">半導體/雲端<br>製造/業務全歷練</div></div>
+</div>
+
+<!-- VALUE PROP -->
+<div class="vp f" style="animation-delay:.2s">
+  <div class="vtag">我能為你的越南業務帶來什麼</div>
+  <div class="vtext">
+    我在製造業走訪超過100家工廠，見過各種設備環境、OT架構和客戶決策模式。台商客戶在乎的不是報價，而是<strong>對方有沒有辦法真正解決他們的問題</strong>。我能用他們聽得懂的語言討論設備、效率、成本，信任建立的速度比純業務快得多。<br><br>
+    另外，我在Micron、Winbond、IBM做過大型資料系統整合。現在的製造業客戶越來越多人在問系統整合、設備數據串接、預防保養邏輯。<strong>這些問題我可以現場給方向，不需要說「我回去問工程師」——這就是我跟其他業務不同的地方。</strong>
+  </div>
+  <div class="badges">
+    <span class="badge">IIoT架構設計</span>
+    <span class="badge">即時監控系統</span>
+    <span class="badge">OT / IT整合</span>
+    <span class="badge">系統整合</span>
+    <span class="badge">預防保養</span>
+    <span class="badge">製造業數位化</span>
+    <span class="badge">設備數據串接</span>
+    <span class="badge">工業自動化</span>
+  </div>
+</div>
+
+<!-- 01 SALARY -->
+<div class="sec f" style="animation-delay:.26s">
+  <div class="sechd">
+    <div class="secn">01</div>
+    <div><div class="sectag">Cash Compensation</div><div class="sectitle">薪資架構｜底薪 + 業績獎金，才是完整的設計</div></div>
+  </div>
+
+  <div class="sal">
+    <div class="saltop">
+      <div>
+        <div class="saltag">純固定底薪 Base Salary｜稅前年薪</div>
+        <div class="saln">135<span>萬 TWD／年</span></div>
+      </div>
+      <div class="salnote">
+        此為純固定底薪<br>
+        <em>不含</em>專案分紅<br>
+        <em>不含</em>機票、保險、住房津貼<br>
+        所有津貼均為底薪之<em>外加（Plus）</em>
+      </div>
+    </div>
+    <div class="salsplit">
+      <div class="spitem">
+        <div class="sppct">70%</div>
+        <div class="splbl">台幣｜匯入台灣帳戶</div>
+        <div class="spnote">約 NTD 78,750 / 月<br>台灣免稅額與扣除額保護<br>實質所得稅率僅 5%<br>台灣母公司以費用或顧問費合法入帳</div>
+      </div>
+      <div class="spitem">
+        <div class="sppct">30%</div>
+        <div class="splbl">美金｜越南當地申報</div>
+        <div class="spnote">約 USD 1,140 / 月<br>符合越南 Work Permit 經理職申報門檻<br>有效避開越南最高 35% PIT 個人所得稅</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="gp">
+    <div class="gp-tag">業績獎金｜Variable Incentive — 市場開拓的真實動機</div>
+    <div class="gp-val">專案毛利 10% 分紅（Gross Profit Sharing）季度結算</div>
+    <div class="gp-note">
+      底薪是穩定運營的保障，<strong>分紅才是我願意全力開拓市場的真實動機</strong>。工業自動化案子毛利率通常 25–40%：一個 NTD 500萬的案子，毛利約 NTD 125–200萬，分紅就是 <strong>NTD 12.5–20萬 / 案</strong>。
+    </div>
+    <div class="gp-cols">
+      <div class="gp-col">
+        <div class="gp-col-lbl">對公司</div>
+        <div class="gp-col-txt">零風險，沒業績就沒支出。業績越好，付出的成本才越高——這是最健康的激勵結構</div>
+      </div>
+      <div class="gp-col">
+        <div class="gp-col-lbl">新客戶加碼</div>
+        <div class="gp-col-txt">新客戶首年分紅提升至 15%，第二年起回歸 10%，確保有動力持續開拓，不只維繫老客戶</div>
+      </div>
+    </div>
+  </div>
+
+  <div class="cards two" style="margin-top:14px">
+    <div class="card hl">
+      <div class="ctag">對公司的稅務好處</div>
+      <div class="cval">台灣部分合法費用列支</div>
+      <div class="cnote">台灣母公司以業務費用或顧問費入帳，合法降低公司整體稅負，兩邊帳目清楚</div>
+    </div>
+    <div class="card hl">
+      <div class="ctag">對我的好處</div>
+      <div class="cval">越南稅基最小化</div>
+      <div class="cnote">越南 PIT 最高 35%，7:3 拆帳讓越南課稅部分降到最低，稅後實際到手才是真正的薪資</div>
+    </div>
+  </div>
+</div>
+
+<!-- 02 INSURANCE -->
+<div class="sec f" style="animation-delay:.32s">
+  <div class="sechd">
+    <div class="secn">02</div>
+    <div><div class="sectag">Insurance & Medical</div><div class="sectitle">保險與醫療｜人在外，後盾要穩</div></div>
+  </div>
+  <div class="cards">
+    <div class="card warn">
+      <div class="ctag w">台灣勞健保</div>
+      <div class="cval">以補貼方式納入總包</div>
+      <div class="cnote">
+        方案A：台灣部分薪資以顧問費給付，本人自行在台投保<br><br>
+        方案B：總包內加入每月 NTD 5,000–8,000 補貼，自行負擔健保與自願提繳勞退<br><br>
+        <span class="wt">此部分若未納入，實際總包價值將被低估</span>
+      </div>
+    </div>
+    <div class="card warn">
+      <div class="ctag w">越南強制社會保險｜外籍員工</div>
+      <div class="cval">勞工自付 9.5%，雇主負擔 20.5%</div>
+      <div class="cnote">
+        持 Work Permit，合約1年以上強制加入<br>
+        外籍員工免繳失業保險<br><br>
+        以月薪 NTD 112,500 計算：<br>
+        個人每月自付：<span class="wt">約 NTD 10,688</span><br>
+        雇主每月負擔：約 NTD 23,063<br><br>
+        此 9.5% 希望在總包協商時一併考量
+      </div>
+    </div>
+    <div class="card">
+      <div class="ctag">海外商業意外險 + 國際 SOS</div>
+      <div class="cval">保額 NTD 500–1,000萬<br>含緊急醫療轉送返台</div>
+      <div class="cnote">業務工作頻繁外出，這是基本的風險保障。國際 SOS 年費約 NTD 15,000–25,000，確保越南業務不因人員意外中斷</div>
+    </div>
+  </div>
+</div>
+
+<!-- 03 ALLOWANCES -->
+<div class="sec f" style="animation-delay:.38s">
+  <div class="sechd">
+    <div class="secn">03</div>
+    <div><div class="sectag">Living Allowances & Tax Optimization</div><div class="sectitle">生活津貼｜幫公司和我都省到錢</div></div>
+  </div>
+  <div class="cards two">
+    <div class="card">
+      <div class="ctag">搬遷費（一次性）</div>
+      <div class="cval">USD 1,000–1,500</div>
+      <div class="cnote">費用涵蓋：行李寄倉、超重費、初期生活用品</div>
+      <div class="opt">
+        <div class="opt-row"><div class="opt-lbl">選項A</div><div class="opt-txt">USD 1,500 實報實銷，憑證核銷，公司入帳列支</div></div>
+        <div class="opt-row"><div class="opt-lbl">選項B</div><div class="opt-txt">USD 1,000 直接補貼，免附憑證，一次性發放</div></div>
+      </div>
+    </div>
+    <div class="card">
+      <div class="ctag">宿舍水電網路</div>
+      <div class="cval">全額由公司負擔</div>
+      <div class="cnote">水電、瓦斯、網路費明定由公司支付，避免日後認知落差，這是基本的安置條件</div>
+    </div>
+  </div>
+  <div class="cards one" style="margin-top:12px">
+    <div class="card full warn">
+      <div class="ctag w">住宿安排｜越南稅法最有利條款</div>
+      <div class="cval">初期住公司宿舍 → 後續轉公司直付住房（Company Housing Lease）USD 500–600 / 月</div>
+      <div class="cnote">
+        <strong>初期：居住公司宿舍</strong>，節省外租開銷，建立工作節奏<br><br>
+        <strong>後續：公司直接與房東簽約付款 USD 500–600 / 月</strong><br>
+        此住房津貼為底薪 135 萬之<span class="wt">外加福利（Plus），絕對不從底薪扣除</span><br><br>
+        <span class="wt">為什麼必須「公司直付」而非補貼給我？</span><br>
+        越南稅法：公司直付房租<strong>不計入員工個人 PIT 稅基</strong>（上限底薪 15%）<br>
+        補貼現金 → 員工須先繳 25% 個人所得稅<br>
+        公司直付 → <strong>員工完全免稅，公司全額列支費用抵越南營所稅</strong><br>
+        這是 Local Hire 框架下唯一的合法雙贏省稅方式。時間點：入職後視實際情況共同討論
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- 04 TRAVEL -->
+<div class="sec f" style="animation-delay:.44s">
+  <div class="sechd">
+    <div class="secn">04</div>
+    <div><div class="sectag">Travel & Transportation</div><div class="sectitle">交通與返台｜4趟確認，細節要談清楚</div></div>
+  </div>
+  <div class="cards four">
+    <div class="card hl">
+      <div class="ctag">返台機票（已確認 4 趟）</div>
+      <div class="cval">每季 1 趟，來回經濟艙全額</div>
+      <div class="cnote">跨國薪資撥付、換匯匯差與機票採購之行政手續費，皆由資方全額負擔，不得侵蝕基本底薪</div>
+    </div>
+    <div class="card hl">
+      <div class="ctag">返台假｜合約明定</div>
+      <div class="cval">每季 7 個工作天，前後週末另計</div>
+      <div class="cnote">以「工作天」計算，前後銜接之週末不納入，與年度特休分開計算，不佔年假額度</div>
+    </div>
+    <div class="card hl">
+      <div class="ctag">週休二日制度</div>
+      <div class="cval">週一到週五正常上班</div>
+      <div class="cnote">若週末因緊急客戶狀況需出動，屬加班性質，應另行計算補休或加班費</div>
+    </div>
+    <div class="card hl">
+      <div class="ctag">當季未返台</div>
+      <div class="cval">機票預算轉商務應酬額度</div>
+      <div class="cnote">若因重大專案交付放棄當季返台，機票預算轉為在地商務開發應酬額度或同等價值津貼，不直接作廢</div>
+    </div>
+  </div>
+  <div class="cards one" style="margin-top:12px">
+    <div class="card">
+      <div class="ctag">當地交通</div>
+      <div class="cval">Grab 月補貼 或 公務車安排</div>
+      <div class="cnote">業務工作頻繁外出拜訪客戶，胡志明市塞車嚴重，交通時間和費用都是真實成本。建議每月定額 Grab 補貼或公務車，讓我專心跑業務</div>
+    </div>
+  </div>
+</div>
+
+<!-- 05 APPROACH -->
+<div class="sec f" style="animation-delay:.5s">
+  <div class="sechd">
+    <div class="secn">05</div>
+    <div><div class="sectag">My Approach</div><div class="sectitle">我怎麼想這件事｜每一項都有邏輯</div></div>
+  </div>
+  <div class="ap"><div class="apicon">🛡️</div><div><div class="aptitle">保險是業務穩定的基礎條件</div><div class="apbody">完整的保障讓我在當地沒有後顧之憂，可以全力衝業績。核心業務人員有完整保障，就是最低成本的業務連續性管理。</div></div></div>
+  <div class="ap"><div class="apicon">📦</div><div><div class="aptitle">搬遷費採實報實銷，對公司完全透明</div><div class="apbody">實報實銷的方式，公司拿到憑證直接入帳，在台灣或越南都可以合法列支，對雙方清楚乾淨。</div></div></div>
+  <div class="ap"><div class="apicon">🏠</div><div><div class="aptitle">公司直付住房，雙方稅務最優化</div><div class="apbody">這不是在要求更多，而是選擇對雙方都最有利的支付方式。員工免稅、公司節稅，相同的支出創造更大的雙方價值。</div></div></div>
+  <div class="ap"><div class="apicon">💰</div><div><div class="aptitle">薪資拆帳讓雙方稅務成本都最合理</div><div class="apbody">台灣部分對母公司是費用列支，越南部分符合當地法規。在合法框架內讓雙方的稅務成本都最合理。</div></div></div>
+</div>
+
+<!-- 06 ROI -->
+<div class="sec f" style="animation-delay:.56s">
+  <div class="sechd">
+    <div class="secn">06</div>
+    <div><div class="sectag">Return on Investment</div><div class="sectitle">為什麼這個總包值得｜請到我 vs 找別人</div></div>
+  </div>
+  <div class="roi">
+    <div class="rrow rhdr">
+      <div class="rcell">比較維度</div>
+      <div class="rcell">請到 Alison</div>
+      <div class="rcell">找一般業務人員</div>
+    </div>
+    <div class="rrow">
+      <div class="rcell">技術客戶溝通</div>
+      <div class="rcell pos">✓ 直接討論設備、OT架構，客戶覺得你們真的懂他，信任快速建立</div>
+      <div class="rcell neg">✗ 技術問題問不清楚，要一直回頭問工程師，信任慢慢建</div>
+    </div>
+    <div class="rrow">
+      <div class="rcell">系統整合 / 數據串接 / 預防保養</div>
+      <div class="rcell pos">✓ 客戶問這類需求，現場直接給方向，不是只會回報問題</div>
+      <div class="rcell neg">✗ 沒有IT背景，遇到這類需求只能說「我問一下」，拉長成交週期</div>
+    </div>
+    <div class="rrow">
+      <div class="rcell">市場摸索時間</div>
+      <div class="rcell pos">✓ 100+ 工廠經驗，客戶痛點和決策邏輯熟悉，快速進狀況</div>
+      <div class="rcell neg">✗ 從頭學起，通常6–12個月才能真正開始衝業績</div>
+    </div>
+    <div class="rrow">
+      <div class="rcell">客戶拓展方式</div>
+      <div class="rcell pos">✓ 技術可信度讓客戶願意轉介紹，人脈擴展有乘數效果</div>
+      <div class="rcell neg">✗ 靠純關係跑，遇到技術型客戶容易被競爭對手切入</div>
+    </div>
+    <div class="rrow">
+      <div class="rcell">管理職 / 制度建立</div>
+      <div class="rcell pos">✓ 獨立跑過完整專案生命週期，可自行設計 KPI 制度，省去老闆管理成本</div>
+      <div class="rcell neg">✗ 只會跑單，制度建立需要老闆親自下場，佔用老闆時間</div>
+    </div>
+    <div class="rrow">
+      <div class="rcell">獨立運作程度</div>
+      <div class="rcell pos">✓ 接觸客戶、判斷需求、提案、跟進，全程自主，不需緊盯</div>
+      <div class="rcell neg">✗ 需要主管把關提案，管理成本高</div>
+    </div>
+    <div class="rrow rtot">
+      <div class="rcell">整體判斷</div>
+      <div class="rcell">固定底薪成本：NTD 135萬 / 年<br><span style="font-size:15px;font-weight:300;color:var(--muted)">其餘變動津貼依實際核銷報支，並隨專案進度提撥</span></div>
+      <div class="rcell">找錯人的摸索成本 + 業績損失，遠超固定底薪差距</div>
+    </div>
+  </div>
+</div>
+
+<!-- 07 INCENTIVE -->
+<div class="sec f" style="animation-delay:.62s">
+  <div class="sechd">
+    <div class="secn">07</div>
+    <div><div class="sectag">Growth & Incentive</div><div class="sectitle">獎金設計與升遷｜談清楚，才有長期合作的基礎</div></div>
+  </div>
+  <div class="cards">
+    <div class="card hl">
+      <div class="ctag">專案毛利分紅</div>
+      <div class="cval">每案毛利 10%，季度結算</div>
+      <div class="cnote">結案後計算，季度發放。對公司零風險，沒業績就沒支出，動機與公司完全一致</div>
+    </div>
+    <div class="card hl">
+      <div class="ctag">新客戶開發獎勵</div>
+      <div class="cval">首年分紅加碼至 15%</div>
+      <div class="cnote">新客戶開發難度遠高於維繫老客戶。首年加碼 5%，第二年起回歸標準 10%，激勵持續往外開拓</div>
+    </div>
+    <div class="card full">
+      <div class="ctag">升遷路徑｜Regional Manager 之後呢？</div>
+      <div class="cval">越南做起來了，下一步要有共同想像</div>
+      <div class="cnote">現在的職位是越南分公司代表，20% 為管理職責——員工績效考核、報價審核都在我這邊。如果胡志明市業務做起來：帶更大的團隊？擴展到其他東南亞市場？參與公司業務決策？這不是要求承諾，而是希望雙方對「做好了之後的可能性」有共同的想像。</div>
+    </div>
+  </div>
+</div>
+
+<!-- 08 MARKET -->
+<div class="sec f" style="animation-delay:.68s">
+  <div class="sechd">
+    <div class="secn">08</div>
+    <div><div class="sectag">Go-To-Market Strategy</div><div class="sectitle">越南市場開發藍圖｜我的第一年計畫</div></div>
+  </div>
+
+  <div class="phase-strip">
+    <div class="phase-item"><div class="phase-num">第一季</div><div class="phase-txt">穩固既有台商</div><div class="phase-sub">建立在地口碑</div></div>
+    <div class="phase-item active"><div class="phase-num">第二季</div><div class="phase-txt">啟動新客戶拜訪</div><div class="phase-sub">台商二代廠優先</div></div>
+    <div class="phase-item"><div class="phase-num">第三季</div><div class="phase-txt">切入外資工廠</div><div class="phase-sub">中資韓資日資</div></div>
+    <div class="phase-item"><div class="phase-num">第四季</div><div class="phase-txt">評估越南本地廠</div><div class="phase-sub">建立長期 Pipeline</div></div>
+  </div>
+
+  <div class="cards">
+    <div class="card">
+      <div class="ctag">現有台商基盤｜立即切入</div>
+      <div class="cval">維繫 + 擴單為主</div>
+      <div class="cnote">公司既有客戶清單，台商在越南工廠，關係已建立。汽車、電子、食品、鋼鐵產業為主。第一季優先穩固，建立口碑，再往外擴展</div>
+    </div>
+    <div class="card hl">
+      <div class="ctag">新客戶開發｜Phase 1 主力</div>
+      <div class="cval">台商二代廠 + 外資工廠</div>
+      <div class="cnote">
+        台商二代廠：跟隨供應鏈移入的新建廠，需要自動化升級<br><br>
+        中資 / 韓資 / 日資工廠：語言切入，技術解決方案提案<br><br>
+        越南本地成長型工廠：製造業升級的剛需市場
+      </div>
+    </div>
+    <div class="card green">
+      <div class="ctag g">技術型業務差異化策略</div>
+      <div class="cval">技術提案先行，不打價格戰</div>
+      <div class="cnote">
+        流程：工廠勘查 → OT環境評估 → ROI分析提案 → 試裝驗證 → 全廠導入<br><br>
+        台商客戶最在乎的不是最便宜，而是<strong>能不能真正解決設備問題的人</strong><br><br>
+        我的技術背景讓信任建立比純業務快 3–6 個月
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- CLOSER -->
+<div class="closer f" style="animation-delay:.74s">
+  <h2>談清楚，做起來才舒服</h2>
+  <p>這份清單不是在漫天喊價，<strong>每一個數字都有市場依據，每一項要求都有對應的邏輯</strong>。我希望在進去之前就把條件談清楚，因為談清楚才不會日後產生誤會，對雙方都好。<br><br>越南市場需要時間耕耘，第一年的重心是建立關係、穩住客戶、摸清節奏。<strong>只要後顧之憂解決了，我可以全力把這件事做好。</strong></p>
+</div>
+
+<div class="foot">
+  <div class="fname">Alison Hsu</div>
+  <div class="femail">buddy88882@gmail.com</div>
+</div>
+
+</div>
+</body>
+</html>
